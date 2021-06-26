@@ -6,12 +6,12 @@ from selenium.webdriver.support import expected_conditions as EC
 
 import time
 
+# Home Page
 path = "C:\\Program Files (x86)\\chromedriver.exe"
-
 driver = webdriver.Chrome(path)
-
 driver.get("https://www.hudl.com/login")
 
+# Login credentials 
 
 login_page_email = driver.find_element_by_id("email")
 login_page_email.send_keys("majhar14@gmail.com")

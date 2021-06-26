@@ -5,30 +5,21 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 import time
+
 path = "C:\\Program Files (x86)\\chromedriver.exe"
 
 driver = webdriver.Chrome(path)
 
-driver.get("https://www.homedepot.com/auth/view/signin?redirect=/&ref=null")
-
-try:
-    login_page_email = WebDriverWait(driver, 10).until(
-        EC.presence_of_element_located((By.ID, "email"))
-    )
-    login_page_email.send_keys("farhi86@yahoo.com")
+driver.get("https://www.hudl.com/login")
 
 
-    login_page_pass = WebDriverWait(driver, 10).until(
-        EC.presence_of_element_located((By.ID, "password-input-field"))
-    )
-    login_page_pass.send_keys("XXXXXXXX")
+login_page_email = driver.find_element_by_id("email")
+login_page_email.send_keys("majhar14@gmail.com")
+login_page_passwoord = driver.find_element_by_id("password")
+login_page_passwoord.send_keys("xxxxxxxx")
+login_button = driver.find_element_by_id("logIn")
+login_button.click()
+time.sleep(10)
+driver.close()
 
-
-    login_page_button = driver.find_element_by_class_name("bttn__content")
-    login_page_button.click()
-    print(driver.title)
-
-except Exception:
-    time.sleep(60)
-    driver.quit()
 

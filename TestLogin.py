@@ -2,7 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import time
 
-# Launch Home Page
+# Launch home page
 
 path = "C:\\Program Files (x86)\\chromedriver.exe"
 driver = webdriver.Chrome(path)
